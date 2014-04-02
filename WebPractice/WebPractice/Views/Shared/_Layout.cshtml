@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html  ng-app="brfcatApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Brf:Domarringen Lund</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @*<script src="~/Scripts/jquery-1.10.2.js"></script>*@
+    <script src="~/Scripts/angular.js"></script>
+    @*<script src="~Scripts/angular-animate.js"></script>
+        <script src="~Scripts/angular-resource.js"></script>
+        <script src="~Scripts/angular-route.js"></script>*@
+
+    @*<script src="~Module/app.js"></script>*@
+    @*<script src="~js/animations.js"></script>*@
+    <script src="~/Controllers/JsController.js"></script>
+    @*<script src="~js/filters.js"></script>
+        <script src="~js/services.js"></script>*@
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Domarringen", "Index", "Home", null, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Aktuellt", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Styrelsen", "Management", "Home")</li>
+                    <li>@Html.ActionLink("Information", "Information", "Home")</li>
+                    <li>@Html.ActionLink("Läge", "Location", "Home")</li>
+                    <li>@Html.ActionLink("Föreningslokal", "CommonRoom", "Home")</li>
+                    @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    @*<div class="container">
+            <div class="masthead">
+                <h3 class="text-muted">@Html.ActionLink("Application Name", "Index", "Home")</h3>
+                <ul class="nav nav-justified">
+                    <li>@Html.ActionLink("Home", "Index", "Home", null, new {@class="active"})</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>*@
+
+    <div class="container body-content">
+
+        <div class="jumbotron">
+            @*<h1>ASP.NET</h1>
+                <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>*@
+            <img src="~/Resources/building.jpg">
+            @*<p><a href="http://asp.net" class="btn btn-primary btn-large">Learn more &raquo;</a></p>*@
+        </div>
+        @RenderBody()
+        <hr />
+        @*<div ng-controller="ManagementListCtrl">
+            <h2>TEST {{pe.name}}</h2>
+            <ul>
+                <li ng-repeat="person in people">
+                    {{person.name}}
+                    <p>{{person.role}}</p>
+                </li>
+            </ul>
+        </div>*@
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
